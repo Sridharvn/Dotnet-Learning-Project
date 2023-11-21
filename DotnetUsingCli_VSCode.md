@@ -35,3 +35,7 @@ For that, we create a folder for the DotNet project to be in and in that folder,
 ```zsh
 dotnet new blazorserver
 ```
+
+# Task
+
+Create a new navLink on the left side. Create a component having Student Details{List}, when clicked, click on a student and his/her details should be shown below, in a child component. The Child component should have a textbox, filled with the details, and it can be edited and when saved, updated.

@@ -24,16 +24,26 @@
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
             </NavLink>
         </div>
+
     </nav>
 </div>
 
 @code {
+    [Parameter]
+    public bool childExisting { get; set; }
     private bool collapseNavMenu = true;
-
+    [Parameter]
+     public EventCallback<bool> onChangeChildExisting { get; set; }
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
+    protected override void OnParametersSet()
+    {
+        var test = childExisting;
+        @* childExisting = true; *@
+    }
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+        onChangeChildExisting.invoke();
     }
 }
